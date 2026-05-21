@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+
+
+
+
 /* *{
   margin: 0;
   padding: 0;
@@ -13,3 +17,10 @@ body,
   width: 100%;
   overflow-x: hidden;
 } */
+
+.authBg{
+  background-image: url('../src/assets/Background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}

@@ -5,12 +5,15 @@ type Props = {
   type: string,
   placeholder? : string,
   id : string,
-//   value : string,
-//   name : string, 
-//   onChange : (e: React.ChangeEvent<HTMLInputElement>)=> void
+  value? : string,
+  name? : string, 
+  pattern? : string,
+  maxLength? : number,
+  inputMode? : "search" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "none" | undefined,
+  onChange? : (e: React.ChangeEvent<HTMLInputElement>)=> void
 }
 
-export default function Input({className, type, placeholder, id}: Props) {
+export default function Input({className, type, placeholder, id, value, name, onChange, pattern, maxLength, inputMode}: Props) {
   return (
     <div>
       <input
@@ -18,9 +21,12 @@ export default function Input({className, type, placeholder, id}: Props) {
         type={type}
         placeholder={placeholder}
         id={id}
-        // value={value}
-        // name={name}
-        // onChange={onChange}
+        value={value}
+        name={name}
+        onChange={onChange}
+        pattern={pattern}
+        maxLength={maxLength}
+        inputMode={inputMode}
       />
     </div>
   )

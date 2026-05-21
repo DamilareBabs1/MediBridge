@@ -6,6 +6,8 @@ import SignUp from './Pages/SignUp'
 import ForgetPassword from './Pages/ForgetPass'
 import PassReset from './Pages/PassReset'
 import PassResSuc from './Pages/PassResSuc' 
+import VerifyCode from './Pages/Auth/VerifyCode'
+import Securehealth from './Pages/SecurHealth'
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path='/ForgetPassword' element={<ForgetPassword />} />
         <Route path='/PassReset' element={<PassReset />} />
         <Route path="/PassResSuc" element={<PassResSuc />} />
+        <Route path="/VerifyCode" element={<VerifyCode />} />
+        <Route path="/SecureHealth" element={<Securehealth />} />
 
       </Routes>
     
