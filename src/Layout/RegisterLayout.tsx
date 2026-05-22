@@ -12,8 +12,11 @@ type Props = {
 
 export default function RegisterLayout({children, heading, subHeading, ul, image}: Props) {
 return (
-    <div  className='h-screen w-full flex justify-between'>
-      <div className='w-full'>
+    <div  className='h-screen w-full flex items-center justify-between'>
+      <div className='w-full flex'>
+       
+        {/* LEFT CARD */}
+
         <div className='authBg px-10 py-5 w-1/2 h-screen'>
                
                <div className="container mx-auto">
@@ -25,14 +28,23 @@ return (
                 </div>
                 <img src={image} alt="" />
                </div>
+        </div>
 
-            <div className='w-1/2'>
+               {/* RIGHT CARD */}
+
+            <div className='w-1/2 mt-15'>
                 <div className='container mx-auto'>
-                    {children}
+                  {children}
+                  
+                  {/* <div>
+                    <h2>{heading}</h2>
+                    <p>{subHeading}</p>
+                  </div> */}
+                    
                 </div>
             </div>
 
-        </div>
+        
       </div>
     </div>
   )
