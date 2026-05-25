@@ -17,11 +17,11 @@ export default function SignUp() {
         <li className='flex items-center gap-[16px]'><img src={Icon} alt="Logo" />Appointment reminders</li>
       </ul>}>
      <form className='w-[420px] border border-white gap-[32px] rounded-2xl p-8 shadow-sm mx-auto'>
-      <h1 className='text-[28px] text-[#141313] font-medium pb-5 flex w-[394px] h-[35px]'>
+      <h1 className='text-[28px] text-[#141313] font-medium pb-5 flex w-[394px] h-[35px] mt-5'>
         Activate your account
       </h1>
-      <p className='text-[#3E3B3B] text-[18px]'>Verify your hospital details to set up portal access.</p>
-        <div className='flex flex-col gap-4 mt-4'>
+      <p className='text-[#3E3B3B] pt-5 text-[18px]'>Verify your hospital details to set up portal access.</p>
+        <div className='flex flex-col gap-8 mt-6'>
           <label htmlFor="Hospital Patient ID / User ID">Hospital Patient / User ID</label>
           <input type="text" id="Hospital Patient ID / User ID" placeholder="Enter your Patient ID" className='border border-gray-300 rounded-md p-2' />
 
@@ -29,7 +29,7 @@ export default function SignUp() {
           <input type="email" id="Email Address" placeholder="Enter your email address" className='border border-gray-300 rounded-md p-2' />
 
           <label htmlFor="Phone Number">Registered Phone Number</label>
-          <input type="tel" id="Phone Number" placeholder="Enter your phone number" className='border border-gray-300 rounded-md p-2' />
+          <input type="tel" id="Phone Number" placeholder="(+234) 000-0000" className='border border-gray-300 rounded-md p-2' />
 
          <ButtonContent type="submit" className='bg-[#28574E]'>Verify Identity<img src={ArrowIcon} alt="Arrow Icon" /></ButtonContent>
 
@@ -37,14 +37,13 @@ export default function SignUp() {
 
         </div>
 
-        <div className='mt-8'>
+        <div className='mt-8 text-[#D1D5D5]'>
         <hr />
-        <div className='flex items-center justify-center mt-6 '>
-          <p>Need help with your patient ID? <a href="#">Contact Support</a></p>
         </div>
+        <div className='flex items-center justify-center mt-6 '>
+          <p>Need help with your patient ID?<Link className='text-[#28574E] font-medium' to='#'> Contact Support</Link></p>
         </div>
 
-        
 
      </form>
     </RegisterLayout>

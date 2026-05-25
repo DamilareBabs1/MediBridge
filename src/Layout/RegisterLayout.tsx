@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../assets/newFrame.png'
+import Logo from '../assets/MediBridgeNew.svg'
 
 type Props = {
   children: React.ReactNode,
@@ -32,7 +32,7 @@ return (
 
                {/* RIGHT CARD */}
 
-            <div className='w-1/2 mt-15'>
+            <div className='w-1/2 mt-15 gap-20'>
                 <div className='container mx-auto'>
                   {children}
                   

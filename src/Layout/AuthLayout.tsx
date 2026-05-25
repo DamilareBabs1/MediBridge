@@ -1,11 +1,12 @@
 import React from 'react'
 import BackGround from '../assets/Background.png'
-import Logo from '../assets/Frame 4.jpg'
+import Logo from "../assets/MediBridgeNew.svg"
 
 type Props = {
   children: React.ReactNode
   heading?: string
   subHeading?: string
+  image? : string,
 }
 
 export default function AuthLayout({
