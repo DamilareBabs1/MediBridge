@@ -24,8 +24,6 @@ export default function Login({}: Props) {
         <p className='pt-5 text-center'>First time here? <Link to="/signup"><span className="text-[#28574E] font-medium">Create an account</span></Link></p>
 
     </form>
-
-
    </AuthLayout>
   )
 }

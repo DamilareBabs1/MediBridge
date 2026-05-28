@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route } from 'react-router'
+import { Routes, Route } from 'react-router-dom'
 import HomePage from './Pages/HomePage'
 import Login from './Pages/Login'
 import SignUp from './Pages/SignUp'
@@ -10,7 +10,10 @@ import VerifyCode from './Pages/Auth/VerifyCode'
 import Securehealth from './Pages/SecurHealth'
 import SecureYAccess from './Pages/SecureYAccess'
 import AcctReady from './Pages/AcctReady'
-import LandingPage1 from './Pages/LandingPage1'
+import DocumentRoute from '../src/Pages/DocumentRou'
+import Cardiology from '../src/Pages/CardiologyPage'
+import Neurology from '../src/Pages/NeurologyPage'
+import AIRouting from '../src/Pages/AIRouting'
 
 function App() {
 
@@ -27,7 +30,10 @@ function App() {
         <Route path="/SecureHealth" element={<Securehealth />} />
         <Route path="/SecureYAccess" element={<SecureYAccess />} />
         <Route path="/AcctReady" element={<AcctReady />} />
-
+        <Route path="/DepartmentPage" element={<DocumentRoute />} />
+        <Route path="/Cardiology" element={<Cardiology />} />
+        <Route path="/Neurology" element={<Neurology />} />
+        <Route path="/ai-support" element={<AIRouting />} />
        </Routes>
 
     </>

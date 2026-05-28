@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from '../Pages/Navbar'
 import ImageIcon from '../assets/Patient&Doctor.svg'
 import DateCalender from '../assets/TimeFrame!.svg'
 import AIFeatures from '../assets/AIFrame!.svg'
@@ -24,26 +25,26 @@ import { Link } from 'react-router'
 
 export default function Hero() {
   return (
-    <div className='bg-[#28574E] h-[55vh] relative w-full mx-auto'>
-   <section className='flex flex-col items-center justify-center w-full p-12 text-center gap-23 text-white -mt-[50px]'>
+    <div className='w-full'>
+   <section className='flex flex-col items-center justify-center w-full p-12 text-center gap-23 text-white -mt-[-10px] bg-[#28574E] relative h-[80vh]'>
+    <Navbar />
       <div className='flex flex-col w-[780px] h-[60px]'>
         <h1 className='text-[60px] text-[#FFFFFF]'>Healthcare That Connects You</h1>
-        <p className='w-[666px] h-[50px] text-[#DAD8D8] pl-15'>Book appointments, talk with trusted doctors, receive support, and get instant AI health guidance in one calm experience.</p>
+        <p className='w-[666px] h-[50px] text-[#DAD8D8] mt-6 pl-15'>Book appointments, talk with trusted doctors, receive support, and get instant AI health guidance in one calm experience.</p>
       </div>
 
-            <div className='flex items-center w-[519px] h-[54px] justify-center gap-6 mt-5'>
+            <div className='flex items-center w-full h-[720px] mt-[-30px] justify-center gap-[30px]'>
                 <button className='w-[236px] h-[54px] bg-[#FFFFFF] text-[#28574E] rounded-[8px] hover:bg-gray-200'>Book Appointment</button>   
-                <button className='w-[236px] h-[54px] bg-[#28574E] border border-[#FFFFFF] text-[#FFFFFF] rounded-[8px] hover:bg-gray-200'>Chat with AI Support</button>
+                <Link to="/ai-support"><button className='w-[236px] h-[54px] bg-[#28574E] border border-[#FFFFFF] text-[#FFFFFF] rounded-[8px] hover:bg-gray-200'>Chat with AI Support</button></Link>
             </div>
     </section>
-            <div className='absolute left-1/2 -bottom-[300px] transform -translate-x-1/2'>
-              <img src={ImageIcon} alt="" />
-            </div>
-
+      <div className='absolute left-1/2 -translate-x-1/2 bottom-[-37px] w-[908px] h-[352px] flex justify-center'>
+      <img className='w-full object-contain' src={ImageIcon} alt=""/></div>
+      
       {/* WHY MEDIBRIDGE SECTION */}
 
           <section>
-            <div className='flex flex-col pt-[400px] items-center justify-center gap-2'>
+            <div className='flex flex-col pt-48 items-center justify-center gap-2'>
                 <p className='bg-[#DCF2EE] text-[#28574E] rounded-3xl flex items-center w-[181px] h-[43px] justify-center'>Why MediBridge</p>
                 <h1 className='text-[#141313] text-center text-[34px] h-[40px] font-bold items-center justify-center'>A calmer way to care for yourself.</h1>
                 <p className='text-[#757575] text-[20px] pl-[180px] text-center '>One platform connecting patients with the great care, exactly when they need it.</p>
@@ -70,7 +71,7 @@ export default function Hero() {
 
           {/* AI SUPPORT SECTION */}
 
-          <section className='w-full mt-29 ml-20 flex flex-row gap-[80px]'>
+          <section className='w-full mt-29 flex flex-row gap-[80px]'>
             <div className='w-[482px] pl-30'>
               <p className='bg-[#DCF2EE] flex text-[#28574E] text-[15px] rounded-xl w-[134px] h-[43px] items-center justify-center'>AI Support</p>
               <h1 className='flex text-[#141313] text-[28px] font-semibold mt-2'>Ask anything about your health instantly.</h1>
@@ -88,7 +89,7 @@ export default function Hero() {
                 <img src={ThickGent} alt="" />
                 <p className='text-[#494949]'>Not a replacement for medical care.</p>
               </div>
-              <button className='items-start w-[215px] text-[18px] h-[54px] justify-start border-[8px] border-[#28574E] bg-[#28574E] text-white rounded-xl'>Start Free AI Chat</button>
+              <Link to="/ai-support"><button className='items-start w-[215px] text-[18px] h-[54px] justify-start border-[8px] border-[#28574E] bg-[#28574E] text-white rounded-xl'>Start Free AI Chat</button></Link>
              </div>
              </div>
 
@@ -99,45 +100,45 @@ export default function Hero() {
 
         {/* SPECIALTY CARE SECTION */}
 
-          <section className='w-full bg-[#28574E] text-[#FFFFFF] flex items-center justify-center mt-29'>
-            <div className='flex flex-col items-center justify-center gap-4 pt-20 gap-[64px] pb-20'>
+          <section className='w-full bg-[#28574E] text-[#FFFFFF] flex items-center justify-center mt-15'>
+            <div className='flex flex-col items-center justify-center gap-4 pt-20 gap-[20px] pb-20'>
               <p className='text-[24px] bg-[#DCF2EE] text-[#28574E] w-[175px] flex text-[5px] items-center rounded-2xl justify-center'>Specialty care</p>
-              <p className='text-[34px]'>10+ departments. one unified record.</p>
-              <div className='grid grid-cols-4 gap-[40px] mb-8 mt-10'>
-                <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[283px] h-[148.5px]'>
+              <p className='text-[24px]'>10+ departments. one unified record.</p>
+              <div className='grid grid-cols-4 gap-[24px] mb-8 mt-10'>
+                <Link to="/cardiology"><div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[243px] h-[130.5px]'>
                 <img src={Cardiology} alt="" />
-                <p>Cardiology</p>
-              </div>
-              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[283px] h-[148.5px]'>
+                <p className='text-[15px]'>Cardiology</p>
+              </div></Link>
+              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[243px] h-[130.5px]'>
                 <img src={Pediatrics} alt="" />
-                <p>Pediatrics</p>
+                <p className='text-[15px]'>Pediatrics</p>
               </div>
-              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[283px] h-[148.5px]'>
+              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[243px] h-[130.5px]'>
                 <img src={MentalHealth} alt="" />
-                <p>Mental Health</p>
+                <p className='text-[15px]'>Mental Health</p>
               </div>
-              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[283px] h-[148.5px]'>
+              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[243px] h-[130.5px]'>
                 <img src={Dentistry} alt="" />
-                <p>Dentistry</p>
+                <p className='text-[15px]'>Dentistry</p>
               </div>
-              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[283px] h-[148.5px]'>
+              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[243px] h-[130.5px]'>
                 <img src={Orthopedics} alt="" />
-                <p>Orthopedics</p>
+                <p className='text-[15px]'>Orthopedics</p>
               </div>
-              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[283px] h-[148.5px]'>
+              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[243px] h-[130.5px]'>
                 <img src={GeneralPractice} alt="" />
-                <p>General Practice</p>
+                <p className='text-[15px]'>General Practice</p>
               </div>
-              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[283px] h-[148.5px]'>
+              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[243px] h-[130.5px]'>
                 <img src={OBGYN} alt="" />
-                <p>OB-GYN</p>
+                <p className='text-[15px]'>OB-GYN</p>
               </div>
-              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[283px] h-[148.5px]'>
+              <div className='flex items-center gap-6 justify-center text-[#191C1D] flex-col bg-[#ECEEEE] rounded-xl w-[243px] h-[130.5px]'>
                 <img src={Ophthalmology} alt="" />
-                <p>Ophthalmology</p>
+                <p className='text-[15px]'>Ophthalmology</p>
               </div>
              </div>
-              <button className='bg-[#28574E] w-[281px] h-[54px] text-white rounded-md border-[#FFFFFF] text-[#FFFFFF] border'>Explore all Departments</button>
+              <Link to="/DepartmentPage"><button className='bg-[#28574E] w-[281px] h-[54px] text-white rounded-md border-[#FFFFFF] text-[#FFFFFF] hover:bg-white hover:text-green-500 border'>Explore all Departments</button></Link>
             </div>
           </section>
 
@@ -273,12 +274,12 @@ export default function Hero() {
   </div>
 </section>
 
-<section className='bg-white flex w-full'>
-  <div className='flex gap-[20px] flex-col bg-[#28574E] w-[1152px] mb-50 ml-60 h-[291px] rounded-3xl items-center justify-center'>
-    <h1 className='text-[39px] text-[#FFFFFF] w-[500px]'>
+<section className='bg-white flex items-center justfify-center w-full'>
+  <div className='flex gap-[20px] flex-col bg-[#28574E] mx-auto w-6xl h-[291px] rounded-3xl items-center justify-center'>
+    <h1 className='text-[39px] text-[#FFFFFF]'>
       Stay informed on your health
     </h1>
-    <p className='text-[#DAD8D8] w-[638px] h-[46px]'>Get the latest health tips, medical news, and app updates delivered to your inbox once a week.</p>
+    <p className='text-[#DAD8D8] w-3xl'>Get the latest health tips, medical news, and app updates delivered to your inbox once a week.</p>
 
       <div className='flex mt-3 gap-4'>
       <input className='pl-3 border-[#FFFFFF] border w-[322px] h-[54px] shadow-[#BFC8CA] bg-[#28574E] text-[14px] text-[#DAD8D8] rounded-xl' type="email" placeholder='Enter your email address' />

@@ -1,5 +1,5 @@
 import React from 'react'
-import LandingLayout from '../Layout/LandingLayout'
+import LandingLayout from '../Layout/LandingLayout3'
 import Hero from './Hero'
 
 
@@ -9,8 +9,6 @@ export default function HomePage({}: Props) {
   return (
     <LandingLayout>
       <Hero />
-      
-
     </LandingLayout>
   )
 }
