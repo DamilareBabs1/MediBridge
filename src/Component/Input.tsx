@@ -13,10 +13,10 @@ type Props = {
   onChange? : (e: React.ChangeEvent<HTMLInputElement>)=> void
 }
 
-export default function Input({className, type, placeholder, id, value, name, onChange, pattern, maxLength, inputMode}: Props) {
+export default function Input({className, type, placeholder, id, value, name, onChange, pattern, maxLength, inputMode, ...rest}: Props) {
   return (
     <div>
-      <input
+      <input {...rest}
         className={`${className} py-3 px-3 border border-[#D9D9D9] rounded-md w-full`}
         type={type}
         placeholder={placeholder}

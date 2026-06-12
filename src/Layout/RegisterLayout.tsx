@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../assets/MediBridgeNew.svg'
+import Footer from '../Pages/Footer'
 
 type Props = {
   children: React.ReactNode,
@@ -12,12 +13,13 @@ type Props = {
 
 export default function RegisterLayout({children, heading, subHeading, ul, image}: Props) {
 return (
+  <div>
     <div  className='h-screen w-full flex items-center justify-between'>
       <div className='w-full flex'>
        
         {/* LEFT CARD */}
 
-        <div className='authBg px-10 py-5 w-1/2 h-screen'>
+        <div className='authBg px-10 py-12 w-1/2 h-screen'>
                
                <div className="container mx-auto">
                  <img className="flex w-80" src={Logo} alt="" />
@@ -46,6 +48,10 @@ return (
 
         
       </div>
+      
     </div>
+    <Footer />
+  </div>
+  
   )
 }

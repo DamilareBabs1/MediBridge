@@ -14,6 +14,7 @@ import DocumentRoute from '../src/Pages/DocumentRou'
 import Cardiology from '../src/Pages/CardiologyPage'
 import Neurology from '../src/Pages/NeurologyPage'
 import AIRouting from '../src/Pages/AIRouting'
+import DashBoardLand from './Pages/DashBoardLand'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/Cardiology" element={<Cardiology />} />
         <Route path="/Neurology" element={<Neurology />} />
         <Route path="/ai-support" element={<AIRouting />} />
+        <Route path='/DashBoardLand' element={<DashBoardLand />} />
        </Routes>
 
     </>

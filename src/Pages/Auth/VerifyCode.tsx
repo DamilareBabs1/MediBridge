@@ -1,35 +1,96 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AuthLayout from '../../Layout/AuthLayout'
 import CheckImage from '../../assets/OtpCheckList.png'
 import Input from '../../Component/Input'
 
-
 export default function VerifyCode() {
+
+  const [timeLeft, setTimeLeft] = useState(15 * 60)
+  
+  const [otp, setOtp] = useState<string[]>(Array(6).fill(''))
+
+  // FORMAT TIME
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60)
+    const secs = seconds % 60
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`
+  }
+
+  // TIMER LOGIC
+  useEffect(() => {
+    if (timeLeft <= 0) return
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0))
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [timeLeft])
+
+  // OTP INPUT HANDLER
+  const handleChange = (value: string, index: number) => {
+    if (!/^\d?$/.test(value)) return
+
+    const newOtp = [...otp]
+    newOtp[index] = value
+    setOtp(newOtp)
+  }
+
   return (
-      <AuthLayout>
-        <div className='flex items-center justify-center mx-auto w-13.25 h-[52.18px] bg-[#DCF2EE] rounded-full'>
-          <img src={CheckImage} alt="Check" />
+    <AuthLayout>
+      {/* ICON */}
+      <div className='flex items-center justify-center mx-auto w-[52px] h-[52px] bg-[#DCF2EE] rounded-full'>
+        <img src={CheckImage} alt="Check" />
+      </div>
+
+      {/* FORM */}
+      <form className='text-center mt-6'>
+        <label className='text-[18px] font-semibold'>
+          OTP Verification
+        </label>
+
+        <p className='text-sm text-gray-500 mt-2'>
+          Enter the 6-digit code sent to your email
+        </p>
+
+        {/* OTP INPUTS */}
+        <div className='flex gap-3 py-7 justify-center'>
+          {otp.map((value, index) => (
+            <Input
+              key={index}
+              type="text"
+              value={value}
+              onChange={(e: any) => handleChange(e.target.value, index)}
+              maxLength={1}
+              inputMode="numeric"
+              className='w-[44px] h-[44px] text-center border border-[#D9D9D9] text-[18px] font-semibold'
+            />
+          ))}
         </div>
 
-        <form className='text-center'>
-            <label htmlFor="otp" className='text-[18px] font-semibold'>OTP Verification</label>
-            <p>Enter the 6-digit code sent to [user@email.com]</p>
+        {/* TIMER */}
+        <p className='text-gray-600'>
+          Code expires in {formatTime(timeLeft)}
+        </p>
 
-        <div className='flex gap-5 py-7 items-center justify-center'>
-          {Array.from({ length: 6 }, (_, index) => {
-            return (
-              <Input key={index} type="text" id={`otp-${index}`} inputMode="numeric" pattern="\d*" maxLength={1} className='flex items-center justify-center text-center border-[1.5px] border-[#D9D9D9] w-[44px] h-[44px] text-[18px] font-semibold' />
-            )
-          })}
-        </div>
-
-        <p>Code expires in 15:00</p>
-
+        {/* BUTTONS */}
         <div className='flex justify-between items-center pt-8'>
-          <button className='w-[177px] h-[54px] rounded-md text-[#28574E] border-[1.5px] border-[#28574E] cursor-pointer hover:bg-[#28574E] hover:text-white' type="submit">Resend Code</button>  
-          <button className='w-[177px] h-[54px] rounded-md text-[#28574E] border-[1.5px] border-[#28574E] cursor-pointer hover:bg-[#28574E] hover:text-white' type="submit">Verify Code</button>
+          <button
+            type="button"
+            onClick={() => setTimeLeft(15 * 60)}
+            className='w-[177px] h-[54px] rounded-md text-[#28574E] border border-[#28574E] hover:bg-[#28574E] hover:text-white'
+          >
+            Resend Code
+          </button>
+
+          <button
+            type="submit"
+            className='w-[177px] h-[54px] rounded-md text-[#28574E] border border-[#28574E] hover:bg-[#28574E] hover:text-white'
+          >
+            Verify Code
+          </button>
         </div>
-        </form>
-      </AuthLayout>
+      </form>
+    </AuthLayout>
   )
 }

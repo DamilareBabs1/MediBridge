@@ -2,9 +2,6 @@ import React from 'react'
 import { Link } from 'react-router'
 import image from '../assets/MediBridgeNew.svg'
 
-
-
-
 export default function Navbar() {
   return (
     <nav className='w-full h-[20vh] flex flex-col items-center justify-center relative z-50'>

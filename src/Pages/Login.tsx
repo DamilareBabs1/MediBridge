@@ -1,29 +1,75 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AuthLayout from '../Layout/AuthLayout'
 import Input from '../Component/Input'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import Button from '../Component/Button'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+
+const loginSchema = z.object({
+  patientId: z.string().min(6, 'Patient ID must be at least 6 characters'),
+  password: z.string().min(6, 'Password must be at least 6 characters').max(12, 'Password must be at most 12 characters'),
+})
+type loginValue = z.infer<typeof loginSchema>;
 
 
-type Props = {}
+export default function Login() {
 
-export default function Login({}: Props) {
+  const navigate = useNavigate()
+
+  const { register, handleSubmit, formState: { errors } } = useForm<loginValue>({
+    resolver: zodResolver(loginSchema)
+  })
+
+  const onSubmit = (data: loginValue) => {
+    console.log("Form Submitted :", data)
+    navigate('/')
+  }
+
   return (
-   <AuthLayout heading="Welcome Back!" subHeading="Access your healthcare records, appointments, and care team.">
-    <form className='py-5 w-full'>
-        <label className='font-semibold text-[18px] pb-2' htmlFor="userId">Hospital Patient ID/ User ID </label>
-        <Input type="text" id="userId" className='block my-2' placeholder='Enter your patient ID' />
+    <AuthLayout
+      heading="Welcome Back!"
+      subHeading="Access your healthcare records, appointments, and care team."
+    >
+      <form className='py-5 w-full' onSubmit={handleSubmit(onSubmit)}>
 
-        <label className='font-semibold text-[18px] pb-2' htmlFor="password">Password</label>
-        <Input type="password" id="password" className='block my-2' placeholder='Enter your password' />
+        {/* Patient ID */}
+        <label>Hospital Patient ID / User ID</label>
 
-        <Link to="/signup"><span className='text-[#28574E] text-sm font-light block my-2'>Forget Password?</span></Link>
+        <Input {...register("patientId")} type="text"  className="" placeholder="Enter your patient ID" />
 
-        <Button content="Sign In " type='submit' className='mt-8' />
+        {errors.patientId && (
+          <p className="text-red-500 text-sm">{errors.patientId.message}</p>
+        )}
 
-        <p className='pt-5 text-center'>First time here? <Link to="/signup"><span className="text-[#28574E] font-medium">Create an account</span></Link></p>
+        {/* Password */}
+        <label className='mt-6'>Password</label>
 
-    </form>
-   </AuthLayout>
+        <Input {...register("password")} type="password" className="" placeholder="Enter your password" />
+
+        {errors.password && (
+          <p className="text-red-500 text-sm">{errors.password.message}</p>
+        )}
+
+        <Link to="/ForgetPassword">
+          <span className='text-[#28574E] text-sm block my-2'>
+            Forget Password?
+          </span>
+        </Link>
+
+        <Button type="submit" content="Sign In" className='mt-8' />
+
+        <p className='pt-5 text-center'>
+          First time here?
+          <Link to="/signup">
+            <span className="text-[#28574E] font-medium ml-1">
+              Create an account
+            </span>
+          </Link>
+        </p>
+
+      </form>
+    </AuthLayout>
   )
 }

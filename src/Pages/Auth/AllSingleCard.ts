@@ -15,7 +15,7 @@ export const AllSingleCard= [ {
   specialists :"5 Specialists",
   title:"Cardiology",
   description:"Heart and cardiovascular care. Specialized diagnostics and treatment for heart health.",
-  link : "/Cardiology"
+  // link : "/Cardiology"
 },
 {
   id : 2,
@@ -23,7 +23,7 @@ export const AllSingleCard= [ {
   specialists :"5 Specialists",
   title:"Neurology",
   description:"Brain and nervous system care. Advanced neurological assessment and management.",
-  link : "/Neurology"
+  // link : "/Neurology"
 },
 {
   id : 3,
@@ -31,6 +31,7 @@ export const AllSingleCard= [ {
   specialists :"5 Specialists",
   title:"Pediatrics",
   description:"Healthcare for children and adolescents. Compassionate care for our youngest patients.",
+  // link : ""
 },
 {
   id : 4,
@@ -38,6 +39,7 @@ export const AllSingleCard= [ {
   specialists : "5 Specialists",
   title : "Dentistry",
   description:"Dental care and oral health. Routine checkups and specialized dental procedures.",
+  // link : ""
 },
 {
   id : 5,
@@ -45,6 +47,7 @@ export const AllSingleCard= [ {
   specialists :"5 Specialists",
   title:"Ophthalmology",
   description:"Focuses on the diagnosis and treatment of eye and vision problems. Handles conditions like vision.",
+  // link : ""
 },
 {
   id : 6,
@@ -52,6 +55,7 @@ export const AllSingleCard= [ {
   specialists :"5 Specialists",
   title:"Orthopedics",
   description:"Bones, joints and mobility care. Advanced orthopedic surgery and rehabilitation.",
+  // link : ""
 },
 {
   id : 7,
@@ -59,6 +63,7 @@ export const AllSingleCard= [ {
   specialists :"5 Specialists",
   title:"OB-GYN",
   description:"Focuses on women's reproductive health and pregnancy care.",
+  // link : ""
 },
 {
   id : 8,
@@ -66,6 +71,7 @@ export const AllSingleCard= [ {
   specialists :"5 Specialists",
   title:"General Practice",
   description:"Primary and preventive care. Your first point of contact for total health management.",
+  // link : ""
 },
 
 ]
