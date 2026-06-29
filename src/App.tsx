@@ -15,6 +15,10 @@ import Cardiology from '../src/Pages/CardiologyPage'
 import Neurology from '../src/Pages/NeurologyPage'
 import AIRouting from '../src/Pages/AIRouting'
 import DashBoardLand from './Pages/DashBoardLand'
+import BookAppointModal1 from './Pages/BookAppointModal1'
+import BookAppointModal2 from './Pages/BookAppointModal2'
+import DocProfile from './Pages/DocProfile'
+import BookAppoint3 from './Pages/BookAppoint3'
 
 function App() {
 
@@ -36,6 +40,10 @@ function App() {
         <Route path="/Neurology" element={<Neurology />} />
         <Route path="/ai-support" element={<AIRouting />} />
         <Route path='/DashBoardLand' element={<DashBoardLand />} />
+        <Route path='/BookAppointment1' element={<BookAppointModal1 />} />
+        <Route path='/BookAppointment2' element={<BookAppointModal2 />} />
+        <Route path='/DocProfile' element={<DocProfile />} /> 
+        <Route path='/BookAppoint3' element={<BookAppoint3 />} />
        </Routes>
 
     </>

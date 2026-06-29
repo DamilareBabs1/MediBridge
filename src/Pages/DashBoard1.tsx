@@ -7,13 +7,18 @@ import MedirePort from '../assets/file-text.svg'
 
 type DashBoard1Props = {
   onBookAppointment: () => void;
+  currentUser:{
+    name: string;
+    email: string;
+    image: string;
+  };
 };
-export default function DashBoard1({onBookAppointment} : DashBoard1Props) {
+export default function DashBoard1({onBookAppointment, currentUser} : DashBoard1Props) {
   return (
     <div className='w-full h-full'>
         <section className='flex p-5 mt-7 ml-7 w-[1126px] h-[116px] flex-col mt-4 bg-[#28574E] border-[#28574E] rounded-xl'>
             <div className='flex items-start justify-start text-start'>
-                <h1 className='text-[#FFFFFF] text-[24px] font-md'>Hello, Sarah Martins</h1>
+                <h1 className='text-[#FFFFFF] text-[24px] font-md'>Hello, {currentUser.name}</h1>
                 <img src={Hihand} alt="" />
             </div>
             <div className=' text-[#F0E9E9] text-[17px]'>

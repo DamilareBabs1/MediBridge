@@ -40,7 +40,7 @@ const { isModalOpen, selectedCard, openModal, closeModal } = useDeptModal();
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search departments..."
-                className="w-[330px] h-[45px] pl-12 rounded-xl text-black"
+                className="w-[330px] h-[45px] pl-12 rounded-xl text-white border border-[#FFFFFF]"
               />
             </div>
           </div>
@@ -103,7 +103,7 @@ const { isModalOpen, selectedCard, openModal, closeModal } = useDeptModal();
 
           <div className="flex justify-center gap-4 mt-6">
             <input
-              className="w-[320px] h-[54px] rounded-xl text-black px-4"
+              className="w-[320px] h-[54px] rounded-xl text-white border border-[#FFFFFF] px-4"
               placeholder="Enter email"
             />
             <button className="bg-white text-[#28574E] px-6 rounded-xl">
