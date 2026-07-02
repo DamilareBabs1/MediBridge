@@ -29,6 +29,7 @@ export default function BookAppointmentFlow({ onClose }) {
             selectedDoctor={selectedDoctor}
             setSelectedDoctor={setSelectedDoctor}
             onBack={() => setStep(1)}
+            onNext={() => setStep(3)}
             onClose={onClose}
           />
         )}

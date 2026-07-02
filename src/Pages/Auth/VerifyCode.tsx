@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react'
 import AuthLayout from '../../Layout/AuthLayout'
 import CheckImage from '../../assets/OtpCheckList.png'
 import Input from '../../Component/Input'
+import Stepper from '../../Component/Stepper'
+import { useNavigate } from 'react-router'
 
 export default function VerifyCode() {
+
+  const navigate = useNavigate();
 
   const [timeLeft, setTimeLeft] = useState(15 * 60)
   
@@ -36,15 +40,26 @@ export default function VerifyCode() {
     setOtp(newOtp)
   }
 
+  const handleSubmit = (e: React.FormEvent) =>{
+    e.preventDefault();
+    
+    const code = otp.join("");
+
+    console.log(code);
+
+    navigate("/SecureYAccess")
+  }
+
   return (
     <AuthLayout>
+      <Stepper currentStep={2} />
       {/* ICON */}
       <div className='flex items-center justify-center mx-auto w-[52px] h-[52px] bg-[#DCF2EE] rounded-full'>
         <img src={CheckImage} alt="Check" />
       </div>
 
       {/* FORM */}
-      <form className='text-center mt-6'>
+      <form onSubmit={handleSubmit} className='text-center mt-6'>
         <label className='text-[18px] font-semibold'>
           OTP Verification
         </label>

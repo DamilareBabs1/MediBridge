@@ -8,6 +8,7 @@ import ButtonContent from '../Component/Button'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import Stepper from '../Component/Stepper'
 
 const signupSchema = z.object({
   patientId: z.string().min(6, 'Patient ID must be at least 6 characters'),
@@ -26,7 +27,7 @@ export default function SignUp() {
 
   const onSubmit = (data: SignupValue) => {
     console.log("Form Submitted :", data)
-    navigate('/login')
+    navigate('/VerifyCode')
   }
 
   
@@ -36,7 +37,7 @@ export default function SignUp() {
       heading="Access your care anytime"
       image={image}
       ul={
-        <ul>
+        <ul className='flex flex-col gap-[17px]'>
           <li className='flex items-center gap-[16px]'><img src={Icon} />Book and manage appointments</li> 
           <li className='flex items-center gap-[16px]'><img src={Icon} />Access visit history</li>
           <li className='flex items-center gap-[16px]'><img src={Icon} />Message your healthcare team</li>
@@ -44,7 +45,9 @@ export default function SignUp() {
           <li className='flex items-center gap-[16px]'><img src={Icon} />Appointment reminders</li>
         </ul>
       }>
-      <form onSubmit={handleSubmit(onSubmit)} className='w-[420px] border border-gray-100 h-[678px] p-5 rounded-2xl items-start mx-auto'> 
+      <form onSubmit={handleSubmit(onSubmit)} className='w-[540px] border border-gray-100 h-[708px] p-5 rounded-2xl items-start mx-auto'> 
+
+        <Stepper currentStep={1} />
 
         <h1 className='text-[28px] font-medium text-[#141313]'>Activate your account</h1>
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import AuthLayout from '../Layout/AuthLayout'
 import Button from '../Component/Button'
 import image from '../assets/AccountReady.png'

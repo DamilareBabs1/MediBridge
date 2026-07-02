@@ -4,7 +4,7 @@ type Props = {
   className? : string,
   type: string,
   placeholder? : string,
-  id : string,
+  id? : string,
   value? : string,
   name? : string, 
   pattern? : string,

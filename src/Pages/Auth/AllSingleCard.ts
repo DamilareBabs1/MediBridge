@@ -1,4 +1,3 @@
-import React from 'react'
 import image1 from '../../assets/Cardio.svg'
 import Neuro from '../../assets/Mentheal.svg'
 import Pediat from '../../assets/Pedio.svg'

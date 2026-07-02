@@ -34,7 +34,7 @@ return (
 
                {/* RIGHT CARD */}
 
-            <div className='w-1/2 mt-15 gap-20'>
+            <div className='w-1/2 mt-20 gap-20'>
                 <div className='container mx-auto'>
                   {children}
                   

@@ -11,18 +11,18 @@ const loginSchema = z.object({
   patientId: z.string().min(6, 'Patient ID must be at least 6 characters'),
   password: z.string().min(6, 'Password must be at least 6 characters').max(12, 'Password must be at most 12 characters'),
 })
-type loginValue = z.infer<typeof loginSchema>;
+type LoginValue = z.infer<typeof loginSchema>;
 
 
 export default function Login() {
 
   const navigate = useNavigate()
 
-  const { register, handleSubmit, formState: { errors } } = useForm<loginValue>({
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginValue>({
     resolver: zodResolver(loginSchema)
   })
 
-  const onSubmit = (data: loginValue) => {
+  const onSubmit = (data: LoginValue) => {
     console.log("Form Submitted :", data)
     navigate('/')
   }
