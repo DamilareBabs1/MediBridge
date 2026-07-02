@@ -29,24 +29,24 @@ export default function Login() {
 
   return (
     <AuthLayout
-      heading="Welcome Back!"
+      heading="Welcome Back"
       subHeading="Access your healthcare records, appointments, and care team."
     >
-      <form className='py-5 w-full' onSubmit={handleSubmit(onSubmit)}>
+      <form className='py-5 w-full h-[55vh]' onSubmit={handleSubmit(onSubmit)}>
 
         {/* Patient ID */}
-        <label>Hospital Patient ID / User ID</label>
+        <label className='text-[#141313] text-[18px] w-[390px] h-[23px] mb-10'>Hospital Patient ID / User ID</label>
 
-        <Input {...register("patientId")} type="text"  className="" placeholder="Enter your patient ID" />
+        <Input {...register("patientId")} type="text"  className="mt-2" placeholder="Enter your patient ID" />
 
         {errors.patientId && (
           <p className="text-red-500 text-sm">{errors.patientId.message}</p>
         )}
 
         {/* Password */}
-        <label className='mt-6'>Password</label>
+        <label className='text-[#141313] text-[18px] w-[390px] h-[23px] mb-10'>Password</label>
 
-        <Input {...register("password")} type="password" className="" placeholder="Enter your password" />
+        <Input {...register("password")} type="password" className=" mt-2" placeholder="Enter your password" />
 
         {errors.password && (
           <p className="text-red-500 text-sm">{errors.password.message}</p>

@@ -4,7 +4,7 @@ import Logo from '../assets/MedibridgeIcon.svg'
 
 export default function Footer() {
   return (
-    <div className='bg-[#F7F7F7] pt-20'>
+    <div className='bg-[#F7F7F7]'>
       <div className='bg-[#E2DFDF] p-8 border border-[#E2DFDF] h-[72px] flex gap-6 items-center justify-between flex-row w-full'>
       <div>
         <img src={Logo} alt="" />
