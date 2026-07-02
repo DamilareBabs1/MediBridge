@@ -7,7 +7,7 @@ import ForgetPassword from './Pages/ForgetPass'
 import PassReset from './Pages/PassReset'
 import PassResSuc from './Pages/PassResSuc' 
 import VerifyCode from './Pages/Auth/VerifyCode'
-import Securehealth from './Pages/SecurHealth'
+import SecurHealth from './Pages/SecurHealth'
 import SecureYAccess from './Pages/SecureYAccess'
 import AcctReady from './Pages/AcctReady'
 import DocumentRoute from '../src/Pages/DocumentRou'
@@ -27,7 +27,7 @@ function App() {
         <Route path='/PassReset' element={<PassReset />} />
         <Route path="/PassResSuc" element={<PassResSuc />} />
         <Route path="/VerifyCode" element={<VerifyCode />} />
-        <Route path="/SecureHealth" element={<Securehealth />} />
+        <Route path="/SecurHealth" element={<SecurHealth />} />
         <Route path="/SecureYAccess" element={<SecureYAccess />} />
         <Route path="/AcctReady" element={<AcctReady />} />
         <Route path="/DepartmentPage" element={<DocumentRoute />} />
