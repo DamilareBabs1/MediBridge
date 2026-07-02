@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import AuthLayout from '../Layout/AuthLayout'
 import Input from '../Component/Input'
-import { Link, useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from '../Component/Button'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
