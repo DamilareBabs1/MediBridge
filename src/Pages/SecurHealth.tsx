@@ -1,6 +1,6 @@
 import React from 'react'
 import RegisterLayout from '../Layout/RegisterLayout'
-import SecureHealth from '../Assets/SecureHealth.svg'
+import SecureHealth from '../assets/SecureHealth.svg'
 import Input from '../Component/Input'
 import Button from '../Component/Button'
 import { Link } from 'react-router'
