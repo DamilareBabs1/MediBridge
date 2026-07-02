@@ -24,7 +24,7 @@ export default function Login() {
 
   const onSubmit = (data: LoginValue) => {
     console.log("Form Submitted :", data)
-    navigate('/')
+    navigate('/DashBoardLand')
   }
 
   return (
